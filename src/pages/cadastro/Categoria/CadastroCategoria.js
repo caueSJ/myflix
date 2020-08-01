@@ -42,7 +42,7 @@ function CadastroCategoria() {
 
                 <FormField
                     type="text"
-                    label="Nome da Categoria:"
+                    label="Nome da Categoria"
                     name="nome"
                     value={valores.nome}
                     onChange={handlerChange}
@@ -50,7 +50,7 @@ function CadastroCategoria() {
 
                 <FormField
                     type="text"
-                    label="Descrição:"
+                    label="Descrição"
                     name="descricao"
                     value={valores.descricao}
                     onChange={handlerChange}
@@ -58,7 +58,7 @@ function CadastroCategoria() {
 
                 <FormField
                     type="color"
-                    label="Cor:"
+                    label="Cor"
                     name="cor"
                     value={valores.cor}
                     onChange={handlerChange}
