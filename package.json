@@ -12,12 +12,13 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-slick": "^0.27.1",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "json-server": "^0.16.1"
   },
   "scripts": {
-    "server": "json-server --watch db.json --port 8080",
+    "server": "node ./server.js",
     "dev" : "concurrently \"react-scripts start\" \"npm run server\"",
-    "start": "react-scripts start",
+    "start": "npm run server",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
