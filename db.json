@@ -1,0 +1,16 @@
+{
+  "categoria": [
+    {
+      "id": 1,
+      "nome": "Front End",
+      "descricao": "Desenvolvimento web",
+      "cor": "#6BF1FF"
+    },
+    {
+      "id": 2,
+      "nome": "Back End",
+      "descricao": "Desenvolvimento web \"oculto\"",
+      "cor": "#A1A1A1"
+    }
+  ]
+}

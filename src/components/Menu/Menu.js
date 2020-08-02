@@ -6,17 +6,17 @@ import Button from '../Button/Button';
 import './Menu.css';
 
 function Menu() {
-    return (
-        <nav className="Menu">
-            <Link to="/">
-                <img src={Logo} className="Logo" alt="MyFlix" />
-            </Link>
+  return (
+    <nav className="Menu">
+      <Link to="/">
+        <img src={Logo} className="Logo" alt="MyFlix" />
+      </Link>
 
-            <Button as={Link} to="/cadastro/video">
-                Novo Vídeo
-            </Button>
-        </nav>
-    )
+      <Button as={Link} to="/cadastro/video">
+        Novo Vídeo
+      </Button>
+    </nav>
+  );
 }
 
 export default Menu;
