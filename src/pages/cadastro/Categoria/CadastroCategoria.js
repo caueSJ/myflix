@@ -30,7 +30,9 @@ function CadastroCategoria() {
   }
 
   useEffect(() => {
-    const URL = 'http:localhost:8080/categorias';
+    const URL = window.location.hostname.includes('locahost')
+      ? 'http://localhost:8080/categorias'
+      : 'https://react-myflix.herokuapp.com/categorias';
     fetch(URL)
       .then(async (serverResponse) => {
         const response = await serverResponse.json();
