@@ -56,12 +56,12 @@ const Input = styled.input`
   }
   
   &:focus:not([type="color"]) + span {
-        transform: scale(.7) translateY(-13px);
+        transform: scale(.6) translateY(-12px);
   }
 
   ${({ hasValue }) => hasValue && css`
       &:not([type="color"]) + span {
-        transform: scale(.6) translateY(-11px);
+        transform: scale(.5) translateY(-10px);
       }
     `};
 `;
