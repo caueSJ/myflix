@@ -3,34 +3,20 @@ import { Link } from 'react-router-dom';
 import PageDefault from '../../../components/PageDefault/PageDefault';
 import FormField from '../../../components/FormField/FormField';
 import Button from '../../../components/Button/Button';
+import useForm from '../../../hooks/useForm';
 
 function CadastroCategoria() {
   const valoresIniciais = {
-    nome: '',
+    titulo: '',
     descricao: '',
     cor: '',
   };
 
+  const { handlerChange, values, clearForm } = useForm(valoresIniciais);
   const [categorias, setCategorias] = useState([]);
-  const [valores, setValores] = useState(valoresIniciais);
-
-  function setValor(chave, valor) { // chave pode ser nome, descricao e cor
-    setValores({
-      ...valores,
-      [chave]: valor,
-    });
-  }
-
-  function handlerChange(infosDoEvento) {
-    const { name, value } = infosDoEvento.target;
-    setValor(
-      name,
-      value,
-    );
-  }
 
   useEffect(() => {
-    const URL = window.location.hostname.includes('locahost')
+    const URL = window.location.hostname.includes('localhost')
       ? 'http://localhost:8080/categorias'
       : 'https://react-myflix.herokuapp.com/categorias';
     fetch(URL)
@@ -44,23 +30,25 @@ function CadastroCategoria() {
     <PageDefault>
       <h1>
         Cadastro de Categoria:
-        {valores.nome}
+        {values.titulo}
       </h1>
 
       <form onSubmit={function handleSubmit(infosDoEvento) {
         infosDoEvento.preventDefault();
         setCategorias([
           ...categorias,
-          valores,
+          values,
         ]);
+
+        clearForm();
       }}
       >
 
         <FormField
           type="text"
-          label="Nome da Categoria"
-          name="nome"
-          value={valores.nome}
+          label="Título da Categoria"
+          name="titulo"
+          value={values.titulo}
           onChange={handlerChange}
         />
 
@@ -68,7 +56,7 @@ function CadastroCategoria() {
           type="text"
           label="Descrição"
           name="descricao"
-          value={valores.descricao}
+          value={values.descricao}
           onChange={handlerChange}
         />
 
@@ -76,7 +64,7 @@ function CadastroCategoria() {
           type="color"
           label="Cor"
           name="cor"
-          value={valores.cor}
+          value={values.cor}
           onChange={handlerChange}
         />
 
@@ -94,7 +82,7 @@ function CadastroCategoria() {
       <ul>
         {categorias.map((categoria) => (
           <li key={`${categoria}`}>
-            {categoria.nome}
+            {categoria.titulo}
           </li>
         ))}
       </ul>
